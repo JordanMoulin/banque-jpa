@@ -5,11 +5,14 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "compte")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Compte {
 	@Id // Déclare à JPA quel champ représente la clé primaire
 	@Column(name = "NUMERO")

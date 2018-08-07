@@ -13,10 +13,10 @@
 		<class>banque.entite.Client</class>
 		<class>banque.entite.Compte</class>
 		<class>banque.entite.Adresse</class>
-		<!-- <class>banque.entite.LivretA</class> -->
-		<!-- <class>banque.entite.AssuranceVie</class> -->
+		<class>banque.entite.LivretA</class>
+		<class>banque.entite.AssuranceVie</class>
 		<class>banque.entite.Operation</class>
-		<!-- <class>banque.entite.Virement</class>  -->
+		<class>banque.entite.Virement</class>
 		
 		<properties>
 		<!-- Informations de connexion à la base de données -->
