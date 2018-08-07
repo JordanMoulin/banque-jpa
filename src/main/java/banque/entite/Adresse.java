@@ -2,16 +2,9 @@ package banque.entite;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
 
 @Embeddable
-@Table(name = "adresse")
 public class Adresse {
-	@Column(name = "ID")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
 	@Column(name = "NUMERO")
 	private Integer numero;
 	@Column(name = "RUE")
@@ -20,14 +13,6 @@ public class Adresse {
 	private Integer codePostal;
 	@Column(name = "VILLE")
 	private String ville;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public Integer getNumero() {
 		return numero;
@@ -59,6 +44,11 @@ public class Adresse {
 
 	public void setVille(String ville) {
 		this.ville = ville;
+	}
+
+	@Override
+	public String toString() {
+		return "Adresse [numero=" + numero + ", rue=" + rue + ", codePostal=" + codePostal + ", ville=" + ville + "]";
 	}
 
 }

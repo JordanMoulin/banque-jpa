@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,12 +28,22 @@ public class Client {
 	private String prenom;
 	@Column(name = "DATE_NAISSANCE")
 	private LocalDate dateNaissance;
+	@Embedded
+	private Adresse adresse;
 	@ManyToMany
 	@JoinTable(name = "Compte_client", joinColumns = @JoinColumn(name = "ID_CLI", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "ID_COMPTE", referencedColumnName = "NUMERO"))
 	private List<Compte> comptes;
 	@ManyToOne
 	@JoinColumn(name = "ID_BANQUE")
 	private Banque banque;
+
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
 
 	public Integer getId() {
 		return id;
@@ -81,4 +92,11 @@ public class Client {
 	public void setBanque(Banque banque) {
 		this.banque = banque;
 	}
+
+	@Override
+	public String toString() {
+		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance=" + dateNaissance
+				+ ", adresse=" + adresse + ", comptes=" + comptes + ", banque=" + banque + "]";
+	}
+
 }

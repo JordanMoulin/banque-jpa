@@ -43,4 +43,9 @@ public class Compte {
 		this.operations = operations;
 	}
 
+	@Override
+	public String toString() {
+		return "Compte [numero=" + numero + ", solde=" + solde + ", operations=" + operations + "]";
+	}
+
 }

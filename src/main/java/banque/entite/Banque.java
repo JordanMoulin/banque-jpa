@@ -33,4 +33,9 @@ public class Banque {
 		this.nom = nom;
 	}
 
+	@Override
+	public String toString() {
+		return "Banque [id=" + id + ", nom=" + nom + "]";
+	}
+
 }
